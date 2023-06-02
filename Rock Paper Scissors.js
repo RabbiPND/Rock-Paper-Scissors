@@ -1,3 +1,23 @@
+ let playerName = "";
+
+ while (playerName === "") {
+   playerName = prompt("Please enter your name:");
+
+   if (playerName === null) {
+     break;
+   }
+ }
+
+ if (playerName !== "") {
+   console.log("Hello, " + playerName + "! Let's start the game.");
+  } else {
+  console.log("No name entered. Game cannot start.");
+ }
+
+ let playerEl = document.getElementById("player-el")
+ console.log(playerEl)
+ playerEl.textContent = playerName
+
 let pick = ["rock", "paper", "scissor"]
 
 function getComputerChoice (pick) {
@@ -6,7 +26,7 @@ function getComputerChoice (pick) {
 
   //console.log(getComputerChoice(pick))
 
-  let playerSelection = "Rock"
+  let playerSelection = "scissor"
   let computerSelection = getComputerChoice (pick) 
 
   function playRound (playerSelection, computerSelection) {
