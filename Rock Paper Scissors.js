@@ -15,7 +15,6 @@
  }
 
  let playerEl = document.getElementById("player-el")
- console.log(playerEl)
  playerEl.textContent = playerName
 
 let pick = ["rock", "paper", "scissor"]
@@ -26,8 +25,14 @@ function getComputerChoice (pick) {
 
   //console.log(getComputerChoice(pick))
 
-  let playerSelection = "scissor"
+  let playerSelection = getComputerChoice (pick) 
+  let playerChoiceEl = document.getElementById("playerchoice-el")
+  playerChoiceEl.textContent = playerSelection
+
   let computerSelection = getComputerChoice (pick) 
+  let computerChoice = document.getElementById("computerchoice-el")
+  computerChoice.textContent = computerSelection
+
 
   function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -42,5 +47,9 @@ function getComputerChoice (pick) {
         return "Computer wins!"
     }
 }
+
+let resultEl = document.getElementById("result-el")
+resultEl.textContent = playRound (playerSelection, computerSelection)
+
  
 console.log(playRound (playerSelection, computerSelection))
