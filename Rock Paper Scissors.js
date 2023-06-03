@@ -1,55 +1,61 @@
- let playerName = "";
+  let playerName = "";
 
- while (playerName === "") {
-   playerName = prompt("Please enter your name:");
+  while (playerName === "") {
+    playerName = prompt("Please enter your name:");
 
-   if (playerName === null) {
-     break;
-   }
- }
-
- if (playerName !== "") {
-   console.log("Hello, " + playerName + "! Let's start the game.");
-  } else {
-  console.log("No name entered. Game cannot start.");
- }
-
- let playerEl = document.getElementById("player-el")
- playerEl.textContent = playerName
-
-let pick = ["rock", "paper", "scissor"]
-
-function getComputerChoice (pick) {
-    return pick [Math.floor(Math.random()*pick.length)] 
+    if (playerName === null) {
+      break;
+    }
   }
 
-  //console.log(getComputerChoice(pick))
+  if (playerName !== "") {
+    console.log("Hello, " + playerName + "! Let's start the game.");
+   } else {
+   console.log("No name entered. Game cannot start.");
+  }
 
-  let playerSelection = getComputerChoice (pick) 
+  let playerEl = document.getElementById("player-el")
+  playerEl.textContent = playerName
+
   let playerChoiceEl = document.getElementById("playerchoice-el")
-  playerChoiceEl.textContent = playerSelection
+  playerChoiceEl.textContent = choices
 
-  let computerSelection = getComputerChoice (pick) 
-  let computerChoice = document.getElementById("computerchoice-el")
-  computerChoice.textContent = computerSelection
+  let computerChoiceEl = document.getElementById("computerchoice-el")
 
 
-  function playRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return "It's a tie!";
-    } else if (
-        (playerSelection === "rock" && computerSelection === "scissor") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissor" && computerSelection === "paper")
-    ) { 
-        return "You Win!";
-    }   else {
-        return "Computer wins!"
-    }
+
+function playGame() {
+  const choices = ['rock', 'paper', 'scissors'];
+  const playerChoice = prompt('Enter your choice: rock, paper, or scissors');
+  
+   if (!playerChoice) {
+     alert('Invalid choice. Please try again!');
+     return;
+   }
+  
+   playerChoice.toLowerCase();
+  
+   if (!choices.includes(playerChoice)) {
+     alert('Invalid choice. Please try again!');
+     return;
+   }
+
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  const result = getResult(playerChoice, computerChoice);
+
+  alert(`Player: ${playerChoice}\nComputer: ${computerChoice}\nResult: ${result}`);
 }
 
-let resultEl = document.getElementById("result-el")
-resultEl.textContent = playRound (playerSelection, computerSelection)
-
- 
-console.log(playRound (playerSelection, computerSelection))
+function getResult(playerChoice, computerChoice) {
+  if (playerChoice === computerChoice) {
+    return "It's a tie!";
+  } else if (
+    (playerChoice === 'rock' && computerChoice === 'scissors') ||
+    (playerChoice === 'paper' && computerChoice === 'rock') ||
+    (playerChoice === 'scissors' && computerChoice === 'paper')
+  ) {
+    return "Player wins!";
+  } else {
+    return "Computer wins!";
+  }
+}
