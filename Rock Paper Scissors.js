@@ -15,47 +15,43 @@
   }
 
   let playerEl = document.getElementById("player-el")
-  playerEl.textContent = playerName
+  playerEl.textContent = playerName // it works
 
-  let playerChoiceEl = document.getElementById("playerchoice-el")
-  playerChoiceEl.textContent = choices
+ 
 
-  let computerChoiceEl = document.getElementById("computerchoice-el")
+ 
 
-
-
-function playGame() {
-  const choices = ['rock', 'paper', 'scissors'];
-  const playerChoice = prompt('Enter your choice: rock, paper, or scissors');
-  
-   if (!playerChoice) {
-     alert('Invalid choice. Please try again!');
-     return;
-   }
-  
-   playerChoice.toLowerCase();
-  
-   if (!choices.includes(playerChoice)) {
-     alert('Invalid choice. Please try again!');
-     return;
-   }
-
-  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-  const result = getResult(playerChoice, computerChoice);
-
-  alert(`Player: ${playerChoice}\nComputer: ${computerChoice}\nResult: ${result}`);
-}
-
-function getResult(playerChoice, computerChoice) {
-  if (playerChoice === computerChoice) {
-    return "It's a tie!";
-  } else if (
-    (playerChoice === 'rock' && computerChoice === 'scissors') ||
-    (playerChoice === 'paper' && computerChoice === 'rock') ||
-    (playerChoice === 'scissors' && computerChoice === 'paper')
-  ) {
-    return "Player wins!";
-  } else {
-    return "Computer wins!";
+function getComputerChoice () {
+  let pick = ["Rock", "Paper", "Scissor"]
+    return pick [Math.floor(Math.random()*pick.length)] 
+    
   }
+
+  function playGame(playerSelection) {
+
+    let computerSelection = getComputerChoice();
+    let computerChoiceEl = document.getElementById("computerchoice-el")
+    computerChoiceEl.textContent = computerSelection
+
+    const result = playRound(playerSelection, computerSelection);
+
+    const resultElement = document.querySelector("#result");
+    resultElement.textContent = `Result: ${result}`;
+  }
+
+
+
+  function playRound (playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "It's a tie!";
+    } else if (
+        (playerSelection === "Rock" && computerSelection === "Scissor") ||
+        (playerSelection === "Paper" && computerSelection === "Rock") ||
+        (playerSelection === "Scissor" && computerSelection === "Paper")
+    ) { 
+        return "You Win!";
+    }   else {
+        return "Computer wins!"
+    }
 }
+
