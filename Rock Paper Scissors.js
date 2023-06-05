@@ -15,7 +15,7 @@
   }
 
   let playerEl = document.getElementById("player-el")
-  playerEl.textContent = playerName // it works
+  playerEl.textContent = playerName
 
  
 
