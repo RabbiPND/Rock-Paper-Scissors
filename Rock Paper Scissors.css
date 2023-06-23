@@ -27,6 +27,19 @@ body{
         text-align: center;
 }
 
+#Score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 90px;
+    text-align: center;
+    border: 3px dotted goldenrod;
+    border-radius: 4px;
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
 #para2 {
     display: flex;
     flex-direction: row;
