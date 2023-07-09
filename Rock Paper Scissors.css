@@ -23,7 +23,7 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 50px;
+        gap: 60px;
         text-align: center;
 }
 
@@ -31,7 +31,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 90px;
+    gap: 100px;
     text-align: center;
     border: 3px dotted goldenrod;
     border-radius: 4px;
@@ -44,7 +44,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 60px;
+    gap: 90px;
     text-align: center;
 }
 

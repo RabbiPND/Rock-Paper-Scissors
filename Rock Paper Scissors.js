@@ -1,7 +1,8 @@
   let playerName = "";
+  let capitalLetter
 
   while (playerName === "") {
-    playerName = prompt("Please enter your name:");
+    playerName = prompt("Please enter your name:");;
 
     if (playerName === null) {
       break;
@@ -9,13 +10,13 @@
   }
 
   if (playerName !== "") {
-    console.log("Hello, " + playerName + "! Let's start the game.");
+    console.log("Hello, " + playerName.charAt(0).toUpperCase() + playerName.slice(1) + "! Let's start the game.");
    } else {
    console.log("No name entered. Game cannot start.");
   }
 
   let playerEl = document.getElementById("player-el")
-  playerEl.textContent = playerName
+  playerEl.textContent = playerName.charAt(0).toUpperCase() + playerName.slice(1)
 
   let playerScore = 0
   let computerScore = 0
