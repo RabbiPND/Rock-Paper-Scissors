@@ -31,7 +31,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 100px;
+    gap: 120px;
     text-align: center;
     border: 3px dotted goldenrod;
     border-radius: 4px;
