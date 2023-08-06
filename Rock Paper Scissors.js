@@ -23,6 +23,10 @@
   let round = 1
   
 
+  const roundPlayer = document.getElementById('round-player')
+  const roundResult = document.getElementById("round")
+  const roundComputer = document.getElementById('round-computer')
+
   function playGame(playerSelection) {
     let pick = ["Rock", "Paper", "Scissor"]
 
@@ -30,10 +34,17 @@
     let computerSelection = pick [Math.floor(Math.random()*pick.length)];
     computerchoiceEl.textContent = computerSelection
 
-    const roundResult = document.getElementById("round-result")
-    roundResult.textContent = `Round ${round} : You chose ${playerSelection} Computer chose ${computerSelection}.`;
     
+    roundResult.textContent = `Round ${round}: `
+
     
+    roundPlayer.textContent = `${playerName}- ${playerSelection}`
+    console.log(roundPlayer)
+
+  
+    roundComputer.textContent = `Computer chose- ${computerSelection}`
+                              
+                              
     let playerMark = document.getElementById("player-score")
     let computerMark = document.getElementById("computer-score")
 
@@ -58,9 +69,9 @@
 
     round++;
 
-    if (round > 5) {
-      endGame()
-    }
+     if (round > 5) {
+       endGame()
+     }
     ;
   }
 
