@@ -38,7 +38,7 @@
     roundResult.textContent = `Round ${round}: `
 
     
-    roundPlayer.textContent = `${playerName}- ${playerSelection}`
+    roundPlayer.textContent = `${playerName} - ${playerSelection}`
     console.log(roundPlayer)
 
   
