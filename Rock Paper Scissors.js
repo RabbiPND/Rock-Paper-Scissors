@@ -91,7 +91,7 @@
     playAgain.style.position = "absolute";
     playAgain.style.left = centerX + "px";
     playAgain.style.top = centerY + "px";
-
+    playAgain.style.marginTop = "80px"
 
 function endGame() {
 
